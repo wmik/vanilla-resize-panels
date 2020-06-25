@@ -1,3 +1,38 @@
-body {
+:root {
+  --default-sidebar-width: 300px;
+}
+
+.resizable {
+  display: flex;
   font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.resizable-side {
+  width: var(--default-sidebar-width);
+  min-width: 200px;
+  max-width: 500px;
+  position: relative;
+}
+
+.resizable-drag-bar {
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+  opacity: 0;
+  background-color: hsl(210, 83%, 67%);
+  position: absolute;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.resizable-drag-bar:hover {
+  opacity: 1;
+}
+
+.resizable-main {
+  flex-grow: 1;
+  z-index: 1;
 }
